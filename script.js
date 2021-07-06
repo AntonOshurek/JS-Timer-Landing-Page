@@ -3,7 +3,7 @@ const item = document.querySelectorAll(".count-down > p");
 const countmainelement = document.getElementById("timer");
 console.log(countmainelement);
 
-let countdownDate = new Date(2021, 6, 18, 0, 0).getTime();
+let countdownDate = new Date(2028, 6, 18, 0, 0).getTime();
 
 function getCountdownTime () {
     const now = new Date().getTime();
