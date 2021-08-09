@@ -1,4 +1,5 @@
-//alert ('alert');
+"use strict"
+
 const item = document.querySelectorAll(".count-down > p");
 const countmainelement = document.getElementById("timer");
 console.log(countmainelement);
