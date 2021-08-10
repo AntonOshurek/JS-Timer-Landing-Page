@@ -1,8 +1,7 @@
 "use strict"
 
-const item = document.querySelectorAll(".count-down > p");
-const countmainelement = document.getElementById("timer");
-console.log(countmainelement);
+const item = document.querySelectorAll('.timer__item > p');
+const countmainelement = document.querySelector('.timer');
 
 let countdownDate = new Date(2028, 6, 18, 0, 0).getTime();
 
@@ -21,7 +20,6 @@ function getCountdownTime () {
     let seconds = Math.floor((distance % oneMinute) / 1000);
 
     const values = [days, hours, minutes, seconds];
-    //console.log(values);
 
     item.forEach(function (item, index) {
         item.textContent = (values[index])
@@ -29,7 +27,7 @@ function getCountdownTime () {
 
     if (distance < 0) {
         clearInterval(countdown);
-        countmainelement.innerHTML = "<h4>Ready stedy go</h4>"
+        countmainelement.innerHTML = "<h4>End of time...</h4>"
     }
 
 }
