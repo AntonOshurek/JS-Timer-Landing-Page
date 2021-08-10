@@ -1,0 +1,3 @@
+JavaScript Timer landing page)
+
+set your time on input and wait...
