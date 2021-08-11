@@ -3,6 +3,32 @@
 const item = document.querySelectorAll('.timer__item > p');
 const countmainelement = document.querySelector('.timer');
 
+const deadlineDate = document.querySelector('.deadline__date');
+const daedlineTime = document.querySelector('.deadline__time');
+const setDeadlineBtn = document.querySelector('.deadline__btn');
+
+let deadDate = null;
+let deadTime = null;
+
+
+setDeadlineBtn.addEventListener('click', (e) => {
+    e.preventDefault;
+    if(!deadlineDate.value || !daedlineTime.value)  {
+        setDeadlineBtn.innerText = 'huj';
+        setDeadlineBtn.classList.add('deadline__btn--error');
+        
+    } else {
+        deadDate = deadlineDate.value;
+        deadTime = daedlineTime.value;
+        console.log(deadDate);
+        console.log(deadTime);
+        setDeadlineBtn.innerText = 'data received';
+        setTimeout(() => (setDeadlineBtn.innerText = 'set timer'), 3000);
+        setDeadlineBtn.classList.remove('deadline__btn--error');
+    }
+})
+
+
 let countdownDate = new Date(2028, 6, 18, 0, 0).getTime();
 
 function getCountdownTime () {
