@@ -7,8 +7,8 @@ const deadlineDate = document.querySelector('.deadline__date');
 const daedlineTime = document.querySelector('.deadline__time');
 const setDeadlineBtn = document.querySelector('.deadline__btn');
 
-let deadDate = null;
-let deadTime = null;
+let deadDate = '';
+let deadTime = '';
 
 
 setDeadlineBtn.addEventListener('click', (e) => {
@@ -25,16 +25,19 @@ setDeadlineBtn.addEventListener('click', (e) => {
         setDeadlineBtn.innerText = 'data received';
         setTimeout(() => (setDeadlineBtn.innerText = 'set timer'), 3000);
         setDeadlineBtn.classList.remove('deadline__btn--error');
+        getCountdownTime();
     }
 })
 
+console.log(Date.parse(deadDate));
 
-let countdownDate = new Date(2028, 6, 18, 0, 0).getTime();
+//let countdownDate = new Date(2028, 6, 18, 0, 0).getTime();
 
 function getCountdownTime () {
     const now = new Date().getTime();
+    let timerDate = Date.parse(deadDate);
 
-    const distance = countdownDate - now;
+    const distance = timerDate - now;
     
     const oneDay = 24 * 60 * 60 * 1000;
     const oneHour = 60 * 60 * 1000;
@@ -55,8 +58,6 @@ function getCountdownTime () {
         clearInterval(countdown);
         countmainelement.innerHTML = "<h4>End of time...</h4>"
     }
-
 }
 
-let countdown = setInterval(getCountdownTime, 1000);
-getCountdownTime();
+ let countdown = setInterval(getCountdownTime, 1000);
