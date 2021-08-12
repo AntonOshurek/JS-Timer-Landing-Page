@@ -22,6 +22,47 @@
     padding: 0 20px;
 }
 
+.standart-btn {
+    position: relative;
+    width: 170px;
+    height: 60px;
+    font-size: 1.2em;
+    border: none;
+    background-color: transparent;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    cursor: pointer;
+    color: var(--standart-white);
+}
+
+.standart-btn::before, .standart-btn::after {
+    content: "";
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    border: 2px solid var(--standart-white);
+    border-top: transparent;
+    transition: 1s;
+    border-right: transparent;
+    box-sizing: border-box;
+}
+
+.standart-btn::before {
+    bottom: 0;
+    left: 0;
+}
+
+.standart-btn::after {
+    top: 0;
+    right: 0;
+    transform: rotate(180deg);
+}
+
+.standart-btn:hover:before, .standart-btn:hover:after {
+    width: 100%;
+    height: 100%;
+}
+
 .body {
     min-height: 100vh;
     display: flex;
@@ -47,6 +88,42 @@
     height: 100%;
 }
 
+.deadline-wrap {
+    margin: 20px auto;
+}
+
+.deadline {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: min-content;
+    padding: 20px;
+    text-align: center;
+}
+
+.deadline__title {
+    color: var(--standart-white);
+    font-size: 1.6em;
+    margin-bottom: 20px;
+}
+
+.deadline__date {
+    width: 150px;
+    margin-bottom: 10px;
+}
+
+.deadline__time {
+    width: 150px;
+}
+
+.deadline__btn {
+    margin-top: 20px;
+}
+
+.deadline__btn--error {
+    color: tomato;
+}
 
 .timer {
     font-family: 'Goblin One';
