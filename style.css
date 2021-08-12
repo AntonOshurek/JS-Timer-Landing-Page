@@ -42,7 +42,7 @@
     height: 20px;
     border: 2px solid var(--standart-white);
     border-top: transparent;
-    transition: 1s;
+    transition: 0.5s;
     border-right: transparent;
     box-sizing: border-box;
 }
