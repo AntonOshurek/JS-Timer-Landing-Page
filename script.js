@@ -4,6 +4,7 @@ const deadlineDate = document.querySelector('.deadline__date');
 const daedlineTime = document.querySelector('.deadline__time');
 const setDeadlineBtn = document.querySelector('.deadline__btn');
 
+const timer = document.querySelector('.timer');
 const days = document.querySelector('.days');
 const hours = document.querySelector('.hours');
 const minutes = document.querySelector('.minutes');
@@ -88,9 +89,22 @@ function getZero (num) {
 
 function settimer(itemDate, itemTime) {
 
-    const msDate = Date.parse(itemDate);
-    const msTime = 0;
-    const fullmstime = msDate + msTime;
+    let msDate = Date.parse(itemDate);
+    let msTime = 0;
+
+    if (itemTime != 0 && itemTime != NaN && itemTime != '') {
+        msTime = getHourseTime(itemTime);
+    }
+    function getHourseTime(itemTime) {
+        let val = itemTime.split(':');
+        let hrs = +val[0];
+        let min = +val[1];
+
+        let ms = hrs * 3600000 + min * 60000;
+        return ms;
+    }
+
+    let fullmstime = msDate + msTime;
 
     const timeInterval = setInterval(updateClock, 1000);
     updateClock();
@@ -105,6 +119,7 @@ function settimer(itemDate, itemTime) {
     
         if (t.total <= 0) {
             clearInterval(timeInterval);
+            timer.innerHTML = (`your timer ${deadline.deadDate} is ... dead`);
         }
     };
 }
