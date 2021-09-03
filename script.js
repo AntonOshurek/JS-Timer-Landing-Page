@@ -39,7 +39,7 @@ function inputSuccess(dateValue, timeValue) {
     };
 
     pushToStorage(deadline);
-    settimer(dateValue, timeValue); //set timer function
+   // settimer(dateValue, timeValue); //set timer function
 
     deadlineDate.value = '';
     daedlineTime.value = '';
@@ -50,6 +50,7 @@ function inputSuccess(dateValue, timeValue) {
 
 function pushToStorage(item) {
     localStorage.setItem('deadline', JSON.stringify(item));
+    checkStorage();
 };
 
 function checkStorage() {
@@ -110,16 +111,18 @@ function settimer(itemDate, itemTime) {
     updateClock();
 
     function updateClock() {
+        console.log(deadline);
         const t = getTime(fullmstime);
-
-        days.innerHTML = getZero(t.days);
-        hours.innerHTML = getZero(t.hours);
-        minutes.innerHTML = getZero(t.minutes);
-        seconds.innerHTML = getZero(t.seconds);
+    
+        days.innerText = getZero(t.days);
+        hours.innerText = getZero(t.hours);
+        minutes.innerText = getZero(t.minutes);
+        seconds.innerText = getZero(t.seconds);
     
         if (t.total <= 0) {
             clearInterval(timeInterval);
-            timer.innerHTML = (`your timer ${deadline.deadDate} is ... dead`);
+            timer.innerText = (`your timer ${deadline.deadDate} is ... dead`);
         }
     };
 }
+
