@@ -20,7 +20,7 @@
     <!--font-family: 'Goblin One', cursive;-->
 
     <!--STYLES-->
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="style.min.css">
 
 </head>
 <body class="body">
@@ -31,29 +31,29 @@
     <main class="main container">
         <section class="deadline deadline-wrap">
             <h2 class="deadline__title">add a deadline</h2>
-            <input class="deadline__date" type="date" required>
-            <input class="deadline__time" type="time">
+            <input class="deadline__date" type="date" aria-label="add a deadline date" required>
+            <input class="deadline__time" type="time" aria-label="add a deadline time">
             <button class="deadline__btn  standart-btn " type="button">set timer</button>
         </section>
 
-        <div class="timer">
-            <div class="timer__item">
+        <ul class="timer">
+            <li class="timer__item">
                 <p class="days">00</p>
                 <span>days</span>
-            </div>
-            <div class="timer__item">
+            </li>
+            <li class="timer__item">
                 <p class="hours">00</p>
                 <span>hours</span>
-            </div>
-            <div class="timer__item">
+            </li>
+            <li class="timer__item">
                 <p class="minutes">00</p>
                 <span>minutes</span>
-            </div>
-            <div class="timer__item">
+            </li>
+            <li class="timer__item">
                 <p class="seconds">00</p>
                 <span>seconds</span>
-            </div>
-        </div>
+            </li>
+        </ul>
     </main>
 
     <footer class="footer container">
@@ -61,15 +61,15 @@
             <li class="social-list__item">
                 <a class="social-list__link" href="https://www.instagram.com/ooshurek/">Instagram</a>
             </li>
-            <li lass="social-list__item">
+            <li class="social-list__item">
                 <a class="social-list__link" href="https://github.com/AntonOshurek">GitHub</a>
             </li>
         </ul>
         <div class="all-rights">
-            <p>All rights reserved &#174</p>
+            <p>All rights reserved &#174;</p>
             <p>by Anton Oshurek</p>
         </div>
     </footer>
-    <script src="script.js"></script>
+    <script src="script.min.js"></script>
 </body>
 </html>

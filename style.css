@@ -8,7 +8,6 @@
     --standart-white: #fff;
     --standart-black: #000;
     --excretion-color: #07b39b;
-    --main-bg-color: #1D1F20;
 }
 
 ::selection {
@@ -69,26 +68,23 @@
     flex-direction: column;
     justify-content: space-between;
     align-items: center;
-    font-family: 'Roboto', sans-serif;
-    background: var(--main-bg-color);
+    font-family: 'Roboto', Arial, sans-serif;
+    font-size: 15px;
+    background: -webkit-linear-gradient(0deg, rgb(18, 19, 19) 3%, rgb(96, 104, 104) 100%);
+    background: -moz-linear-gradient(0deg, rgb(18, 19, 19) 3%, rgb(96, 104, 104) 100%);
+    background: linear-gradient(0deg, rgb(18, 19, 19) 3%, rgb(96, 104, 104) 100%);
 }
 
 /*header*/
 
 .header {
     margin-top: 40px;
-    font-family: 'Roboto', sans-serif;
 }
 
 .header-title {
     background:  linear-gradient(135deg, #f02fc2 0%, #5073b8 25%, #1098ad 50%, #07b39b 75%, #6fba82 100%);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
-}
-
-/*main*/
-.main {
-    /*height: 100%;*/
 }
 
 /*set timer block*/
@@ -114,11 +110,21 @@
 
 .deadline__date {
     width: 150px;
+    padding: 8px;
     margin-bottom: 10px;
+    border: none;
+    border-radius: 8px;
+    background: #e7dede;
+    box-shadow:  7px 7px 93px #5c5959, -7px -7px 93px #ffffff;
 }
 
 .deadline__time {
     width: 150px;
+    border: none;
+    padding: 8px;
+    border-radius: 52px;
+    background: #e7dede;
+    box-shadow:  7px 7px 93px #5c5959, -7px -7px 93px #ffffff;
 }
 
 .deadline__btn {
@@ -133,22 +139,21 @@
 
 .timer {
     font-family: 'Goblin One';
-
     display: flex;
     align-items: center;
     justify-content: center;
     padding: 20px;
-
     --borderWidth: 3px;
     background: #1D1F20;
     position: relative;
-    border-radius: var(--borderWidth);
+    border-radius: var(--borderWidth);    
 }
 
 @media (max-width: 700px) {
     .timer {
         display: grid;
         grid-template-columns: 1fr 1fr;
+        padding: 10px;
     }
 }
 
@@ -183,6 +188,14 @@
     text-align: center;
     color: #D9D4F7;
     position: relative;
+    list-style: none;
+}
+
+@media (max-width: 700px) {
+    .timer__item {
+        padding: 10px;
+        font-size: 0.8em;
+    }
 }
 
 @media (max-width: 700px) {
