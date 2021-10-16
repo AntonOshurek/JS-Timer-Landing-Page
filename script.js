@@ -135,7 +135,10 @@ function settimer(itemDate, itemTime) {
             clearInterval(timeInterval);
             localStorage.removeItem('deadline');
 
-            timer.innerHTML = `<p class='timer__dead'>your timer ${deadline.deadDate} is ... STOP</p>`;
+            days.innerText = '00';
+            hours.innerText = '00';
+            minutes.innerText = '00';
+            seconds.innerText = '00';
         })
     };
 }
