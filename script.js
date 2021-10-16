@@ -109,6 +109,7 @@ function settimer(itemDate, itemTime) {
 
     const timeInterval = setInterval(updateClock, 1000);
     updateClock();
+    clearTimer()
 
     function updateClock() {
         console.log(deadline);
@@ -125,6 +126,19 @@ function settimer(itemDate, itemTime) {
         }
     };
 
-    clearInterval(timeInterval);
+    function clearTimer() {
+        const clearBtn = document.querySelector('.deadline__clear-btn');
+        clearBtn.addEventListener('click', (e) => {
+            e.preventDefault();
+            fullmstime = 0;
+            clearInterval(timeInterval);
+            localStorage.removeItem('deadline');
+
+            timer.innerHTML = `<p class='timer__dead'>your timer ${deadline.deadDate} is ... STOP</p>`;
+            console.log(fullmstime);
+        })
+    };
+
+    //clearInterval(timeInterval);
 }
 
