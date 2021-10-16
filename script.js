@@ -128,7 +128,8 @@ function settimer(itemDate, itemTime) {
   const clearBtn = document.querySelector('.deadline__clear-btn');
   clearBtn.addEventListener('click', (e) => {
     e.preventDefault();
-    clearBtn.innerHTML = 'Timer is clear';
+    clearBtn.innerText = 'Timer is clear';
+    setTimeout(() => (clearBtn.innerText = 'clear timer'), 3000);
     fullmstime = 0;
     clearInterval(timeInterval);
     localStorage.removeItem('deadline');
