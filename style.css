@@ -127,12 +127,18 @@
     box-shadow:  7px 7px 93px #5c5959, -7px -7px 93px #ffffff;
 }
 
+/*set deadline btn*/
 .deadline__btn {
     margin-top: 20px;
 }
 
 .deadline__btn--error {
     color: tomato;
+}
+
+/*clear interval btn*/
+.deadline__clear-btn {
+   margin-top: 20px;
 }
 
 /*timer block*/
@@ -183,6 +189,12 @@
 	}
 }
 
+.timer__dead {
+    text-align: center;
+    grid-column-start: 1;
+    grid-column-end: -1;
+}
+
 .timer__item {
     padding: 20px;
     text-align: center;
@@ -199,6 +211,10 @@
 }
 
 @media (max-width: 700px) {
+    .timer__item {
+        padding: 10px;
+    }
+
     .timer__item:nth-child(-n+2)::after {
         content: '';
         position: absolute;

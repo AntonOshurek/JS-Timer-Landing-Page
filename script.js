@@ -44,8 +44,6 @@ function inputSuccess(dateValue, timeValue) {
     };
 
     pushToStorage(deadline);
-   // settimer(dateValue, timeValue); //set timer function
-
     deadlineDate.value = '';
     daedlineTime.value = '';
     setDeadlineBtn.innerText = 'data received';
@@ -113,9 +111,9 @@ function settimer(itemDate, itemTime) {
     
     timeInterval = setInterval(updateClock, 1000);
     updateClock();
+    clearTimer()
 
     function updateClock() {
-        //console.log(deadline);
         const t = getTime(fullmstime);
     
         days.innerText = getZero(t.days);
@@ -125,8 +123,20 @@ function settimer(itemDate, itemTime) {
     
         if (t.total <= 0) {
             clearInterval(timeInterval);
-            timer.innerText = (`your timer ${deadline.deadDate} is ... dead`);
+            timer.innerHTML = `<p class='timer__dead'>your timer ${deadline.deadDate} is ... dead</p>`;
         }
+    };
+
+    function clearTimer() {
+        const clearBtn = document.querySelector('.deadline__clear-btn');
+        clearBtn.addEventListener('click', (e) => {
+            e.preventDefault();
+            fullmstime = 0;
+            clearInterval(timeInterval);
+            localStorage.removeItem('deadline');
+
+            timer.innerHTML = `<p class='timer__dead'>your timer ${deadline.deadDate} is ... STOP</p>`;
+        })
     };
 }
 
