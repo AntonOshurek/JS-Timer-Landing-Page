@@ -121,11 +121,21 @@
     width: 150px;
 }
 
+/*set deadline btn*/
 .deadline__btn {
     margin-top: 20px;
 }
 
 .deadline__btn--error {
+    color: tomato;
+}
+
+/*clear interval btn*/
+.deadline__clear-btn {
+   margin-top: 20px;
+}
+
+.deadline__clear-btn--error {
     color: tomato;
 }
 

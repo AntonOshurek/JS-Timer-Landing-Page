@@ -124,5 +124,7 @@ function settimer(itemDate, itemTime) {
             timer.innerHTML = `<p class='timer__dead'>your timer ${deadline.deadDate} is ... dead</p>`;
         }
     };
+
+    clearInterval(timeInterval);
 }
 
