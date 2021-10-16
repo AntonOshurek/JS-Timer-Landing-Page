@@ -14,6 +14,14 @@ let timeInterval; //for settimer function
 
 let deadline = [];
 
+function getZero (num) {
+    if (num >= 0 && num < 10) {
+        return `0${num}`;
+    } else {
+        return num;
+    }
+};
+
 setDeadlineBtn.addEventListener('click', (e) => {
     e.preventDefault;
     if(!deadlineDate.value)  {
@@ -23,7 +31,6 @@ setDeadlineBtn.addEventListener('click', (e) => {
     } else if (deadlineDate.value && !daedlineTime.value) {
         clearInterval(timeInterval);
         inputSuccess(deadlineDate.value, '0');
-
     } else {
         clearInterval(timeInterval);
         inputSuccess(deadlineDate.value, daedlineTime.value);
@@ -83,17 +90,10 @@ function getTime(fullmstime) {
     };
 };
 
-function getZero (num) {
-    if (num >= 0 && num < 10) {
-        return `0${num}`;
-    } else {
-        return num;
-    }
-}
-
 function settimer(itemDate, itemTime) {
     let msDate = Date.parse(itemDate);
     let msTime = 0;
+    let fullmstime = msDate + msTime;
 
     if (itemTime != 0 && itemTime != NaN && itemTime != '') {
         msTime = getHourseTime(itemTime);
@@ -106,12 +106,10 @@ function settimer(itemDate, itemTime) {
         let ms = hrs * 3600000 + min * 60000;
         return ms;
     }
-
-    let fullmstime = msDate + msTime;
     
     timeInterval = setInterval(updateClock, 1000);
     updateClock();
-    clearTimer()
+    clearTimer();
 
     function updateClock() {
         const t = getTime(fullmstime);
