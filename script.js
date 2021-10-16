@@ -39,8 +39,6 @@ function inputSuccess(dateValue, timeValue) {
     };
 
     pushToStorage(deadline);
-   // settimer(dateValue, timeValue); //set timer function
-
     deadlineDate.value = '';
     daedlineTime.value = '';
     setDeadlineBtn.innerText = 'data received';
@@ -112,7 +110,6 @@ function settimer(itemDate, itemTime) {
     clearTimer()
 
     function updateClock() {
-        console.log(deadline);
         const t = getTime(fullmstime);
     
         days.innerText = getZero(t.days);
@@ -135,10 +132,7 @@ function settimer(itemDate, itemTime) {
             localStorage.removeItem('deadline');
 
             timer.innerHTML = `<p class='timer__dead'>your timer ${deadline.deadDate} is ... STOP</p>`;
-            console.log(fullmstime);
         })
     };
-
-    //clearInterval(timeInterval);
 }
 
