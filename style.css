@@ -178,6 +178,12 @@
 	}
 }
 
+.timer__dead {
+    text-align: center;
+    grid-column-start: 1;
+    grid-column-end: -1;
+}
+
 .timer__item {
     padding: 20px;
     text-align: center;
