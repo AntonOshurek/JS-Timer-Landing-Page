@@ -1,76 +1,76 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>timer landing page</title>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>timer landing page</title>
 
-    <!--FONTS-->
-    <link rel="preconnect" href="https://fonts.gstatic.com">
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@700&display=swap" rel="stylesheet">
-    <!--font-family: 'Roboto', sans-serif;-->
+  <!--FONTS-->
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@700&display=swap" rel="stylesheet">
+  <!--font-family: 'Roboto', sans-serif;-->
 
-    <link rel="preconnect" href="https://fonts.gstatic.com">
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@1,300&display=swap" rel="stylesheet">
-    <!--font-family: 'Roboto', sans-serif;-->
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@1,300&display=swap" rel="stylesheet">
+  <!--font-family: 'Roboto', sans-serif;-->
 
-    <link rel="preconnect" href="https://fonts.gstatic.com">
-    <link href="https://fonts.googleapis.com/css2?family=Goblin+One&display=swap" rel="stylesheet">
-    <!--font-family: 'Goblin One', cursive;-->
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link href="https://fonts.googleapis.com/css2?family=Goblin+One&display=swap" rel="stylesheet">
+  <!--font-family: 'Goblin One', cursive;-->
 
-    <!--STYLES-->
-    <link rel="stylesheet" href="style.css">
-
+  <!--STYLES-->
+  <link rel="stylesheet" href="style.css">
 </head>
 <body class="body">
-    <header class="header container">
-        <h1 class="header-title">JavaScript Timer</h1>
-    </header>
+  <header class="header container">
+    <h1 class="header-title">JavaScript Timer</h1>
+  </header>
 
-    <main class="main container">
-        <section class="deadline deadline-wrap">
-            <h2 class="deadline__title">add a deadline</h2>
-            <input class="deadline__date" type="date" aria-label="add a deadline date" required>
-            <input class="deadline__time" type="time" aria-label="add a deadline time">
-            <button class="deadline__btn  standart-btn " type="button">set timer</button>
-            <button class="deadline__clear-btn  standart-btn " type="button">clear timer</button>
-        </section>
+  <main class="main container">
+    <section class="deadline deadline-wrap">
+      <h2 class="deadline__title">add a deadline</h2>
+      <input class="deadline__date" type="date" aria-label="add a deadline date" required>
+      <input class="deadline__time" type="time" aria-label="add a deadline time">
+      <button class="deadline__btn  standart-btn" type="button">set timer</button>
+      <button class="deadline__clear-btn standart-btn" type="button">clear timer</button>
+    </section>
 
-        <ul class="timer">
-            <li class="timer__item">
-                <p class="days">01</p>
-                <span>days</span>
-            </li>
-            <li class="timer__item">
-                <p class="hours">01</p>
-                <span>hours</span>
-            </li>
-            <li class="timer__item">
-                <p class="minutes">01</p>
-                <span>minutes</span>
-            </li>
-            <li class="timer__item">
-                <p class="seconds">01</p>
-                <span>seconds</span>
-            </li>
-        </ul>
-    </main>
+    <ul class="timer">
+      <li class="timer__item">
+        <p class="days">00</p>
+        <span>days</span>
+      </li>
+      <li class="timer__item">
+        <p class="hours">00</p>
+        <span>hours</span>
+      </li>
+      <li class="timer__item">
+        <p class="minutes">00</p>
+        <span>minutes</span>
+      </li>
+      <li class="timer__item">
+        <p class="seconds">00</p>
+        <span>seconds</span>
+      </li>
+    </ul>
+  </main>
 
-    <footer class="footer container">
-        <ul class="social-list">
-            <li class="social-list__item">
-                <a class="social-list__link" href="https://www.instagram.com/ooshurek/">Instagram</a>
-            </li>
-            <li class="social-list__item">
-                <a class="social-list__link" href="https://github.com/AntonOshurek">GitHub</a>
-            </li>
-        </ul>
-        <div class="all-rights">
-            <p>All rights reserved &#174;</p>
-            <p>by Anton Oshurek</p>
-        </div>
-    </footer>
-    <script src="script.js"></script>
+  <footer class="footer container">
+    <ul class="social-list">
+      <li class="social-list__item">
+        <a class="social-list__link" href="https://www.instagram.com/ooshurek/">Instagram</a>
+      </li>
+      <li class="social-list__item">
+        <a class="social-list__link" href="https://github.com/AntonOshurek">GitHub</a>
+      </li>
+    </ul>
+    <div class="all-rights">
+      <p>All rights reserved &#174;</p>
+      <p>by Anton Oshurek</p>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
 </body>
 </html>
