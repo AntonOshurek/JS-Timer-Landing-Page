@@ -110,7 +110,6 @@ function settimer(itemDate, itemTime) {
 
   timeInterval = setInterval(updateClock, 1000);
   updateClock();
-  clearTimer();
 
   function updateClock() {
     const t = getTime(fullmstime);
@@ -126,19 +125,17 @@ function settimer(itemDate, itemTime) {
     }
   };
 
-  function clearTimer() {
-    const clearBtn = document.querySelector('.deadline__clear-btn');
-    clearBtn.addEventListener('click', (e) => {
-      e.preventDefault();
-      fullmstime = 0;
-      clearInterval(timeInterval);
-      localStorage.removeItem('deadline');
+  const clearBtn = document.querySelector('.deadline__clear-btn');
+  clearBtn.addEventListener('click', (e) => {
+    e.preventDefault();
+    clearBtn.innerHTML = 'Timer is clear';
+    fullmstime = 0;
+    clearInterval(timeInterval);
+    localStorage.removeItem('deadline');
 
-      days.innerText = '00';
-      hours.innerText = '00';
-      minutes.innerText = '00';
-      seconds.innerText = '00';
-    });
-  };
+    days.innerText = '00';
+    hours.innerText = '00';
+    minutes.innerText = '00';
+    seconds.innerText = '00';
+  });
 };
-
