@@ -10,6 +10,8 @@ const hours = document.querySelector('.hours');
 const minutes = document.querySelector('.minutes');
 const seconds = document.querySelector('.seconds');
 
+let timeInterval; //for settimer function
+
 let deadline = [];
 
 setDeadlineBtn.addEventListener('click', (e) => {
@@ -19,8 +21,11 @@ setDeadlineBtn.addEventListener('click', (e) => {
     } else if(Date.parse(deadlineDate.value) <= new Date().getTime()) {
         inputError('enter a future date');
     } else if (deadlineDate.value && !daedlineTime.value) {
+        clearInterval(timeInterval);
         inputSuccess(deadlineDate.value, '0');
+
     } else {
+        clearInterval(timeInterval);
         inputSuccess(deadlineDate.value, daedlineTime.value);
     }
 })
@@ -87,7 +92,6 @@ function getZero (num) {
 }
 
 function settimer(itemDate, itemTime) {
-
     let msDate = Date.parse(itemDate);
     let msTime = 0;
 
@@ -104,8 +108,8 @@ function settimer(itemDate, itemTime) {
     }
 
     let fullmstime = msDate + msTime;
-
-    const timeInterval = setInterval(updateClock, 1000);
+    
+    timeInterval = setInterval(updateClock, 1000);
     updateClock();
     clearTimer()
 
