@@ -149,6 +149,7 @@
     .timer {
         display: grid;
         grid-template-columns: 1fr 1fr;
+        padding: 10px;
     }
 }
 
@@ -192,6 +193,10 @@
 }
 
 @media (max-width: 700px) {
+    .timer__item {
+        padding: 10px;
+    }
+
     .timer__item:nth-child(-n+2)::after {
         content: '';
         position: absolute;
