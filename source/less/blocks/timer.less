@@ -78,7 +78,7 @@
     background-size: 300% 300%;
   }
 
-  @media (max-width: 700px) {
+  @media (max-width: @tablet-width) {
     display: grid;
     grid-template-columns: 1fr 1fr;
     padding: 10px;
@@ -110,7 +110,11 @@
   position: relative;
   list-style: none;
 
-  @media (max-width: 700px) {
+  & span {
+    text-transform:uppercase;
+  }
+
+  @media (max-width: @tablet-width) {
     padding: 10px;
     font-size: 0.8em;
 
