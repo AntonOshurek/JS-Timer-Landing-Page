@@ -1,12 +1,6 @@
-:root {
-  --standart-white: #fff;
-  --standart-black: #000;
-  --excretion-color: #07b39b;
-}
-
 ::selection {
-  background-color: var(--excretion-color);
-  color: var(--standart-white);
+  background-color: @excretion-color;
+  color: @standart-white;
 }
 
 .container {
@@ -26,7 +20,7 @@
   text-transform: uppercase;
   letter-spacing: 2px;
   cursor: pointer;
-  color: var(--standart-white);
+  color: @standart-white;
 }
 
 .standart-btn::before, .standart-btn::after {
@@ -34,7 +28,7 @@
   position: absolute;
   width: 20px;
   height: 20px;
-  border: 2px solid var(--standart-white);
+  border: 2px solid @standart-white;
   border-top: transparent;
   transition: 0.5s;
   border-right: transparent;
@@ -103,7 +97,7 @@
 }
 
 .deadline__title {
-  color: var(--standart-white);
+  color: @standart-white;
   font-size: 1.6em;
   margin-bottom: 20px;
 }
@@ -281,16 +275,16 @@
 
 .social-list__link:hover,
 .social-list__link:focus {
-  color: var(--standart-white);
+  color: @standart-white;
 }
 .social-list__link:active {
-  color: var(--standart-white);
+  color: @standart-white;
   opacity: 0.3;
 }
 
 .all-rights > p {
   font-size: 1.1em;
-  color: var(--standart-black);
+  color: @standart-black;
   text-shadow: 0px 0px 6px rgba(255, 255, 255, 0.7);
 }
 
